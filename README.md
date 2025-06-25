@@ -45,6 +45,7 @@ Ham Messages Predicted: 984
 Spam Messages Predicted: 131
 
 --- Sample Predictions ---
+
 | Message                                                         | Actual   | Predicted   |
 |:----------------------------------------------------------------|:---------|:------------|
 | Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 aris... | Ham      | Ham         |
