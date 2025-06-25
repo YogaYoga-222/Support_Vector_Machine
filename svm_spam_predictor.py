@@ -45,7 +45,7 @@ print(f"Ham Messages Predicted: {ham_count}")
 print(f"Spam Messages Predicted: {spam_count}")
 
 # Sample Predictions - clean output
-print("\n--- Sample Predictions ---")
+print("\n--- Sample Predictions ---\n")
 sample_df = pd.DataFrame({
     'Message': msg_test.iloc[:5].values,
     'Actual': ['Ham' if label == 0 else 'Spam' for label in y_test.iloc[:5]],
