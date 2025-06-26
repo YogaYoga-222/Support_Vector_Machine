@@ -55,6 +55,7 @@ Ham Messages Predicted: 984
 Spam Messages Predicted: 131
 
 --- Sample Predictions ---
+
 | Message                                                         | Actual   | Predicted   |
 |:----------------------------------------------------------------|:---------|:------------|
 | Funny fact Nobody teaches volcanoes to erupt...                 | Ham      | Ham         |
