@@ -1,42 +1,52 @@
-## SVM Spam Detection (`svm_spam_predictor.py`)
+# Support Vector Machine (SVM) Projects
 
-### Dataset
-- **File Name**: `spam.csv`
-- **Description**: This file contains text messages labeled as either `ham` (not spam) or `spam`.
+## Program Details
+
+### 1. `svm_spam_predictor.py`
+
+- This program predicts whether a text message is **spam** or **not spam** (ham).
+- It uses **TF-IDF** to convert text into numbers and **SVM (Linear)** to classify the messages.
+- It shows the accuracy, prediction summary, sample predictions, and a detailed classification report.
+
+### 2. `svm_eligibility_predictor.py`
+
+- This program predicts whether a person is **eligible** or **not eligible** (for a job, scholarship, etc.).
+- It uses features like **age**, **education level**, and **experience** from a dataset.
+- It uses **Linear SVM** to make predictions.
+- You can also give your own input (age, education, experience) and check the prediction in real time.
 
 ---
 
-### Goal
-Use **Support Vector Machine (SVM)** to build a model that predicts whether a given message is spam or not.
+## Requirements
 
----
-
-### Requirements
-
-Make sure you have the following Python libraries installed:
+Install the required Python libraries using:
 
 ```bash
 pip install pandas numpy scikit-learn tabulate
 ```
 ---
 
-### What the Code Does
+## Files
 
-* Loads the dataset spam.csv
-* Preprocesses the data (keeps only required columns and cleans missing values)
-* Converts the text messages into numerical format using TF-IDF
-* Splits the data into training and testing sets
-* Trains an SVM model (Linear SVM)
-* Predicts spam or ham messages
-* Shows:
-  * Model accuracy
-  * Total predicted spam and ham messages
-  * Few sample predictions
-  * Full classification report
- 
+- `svm_spam_predictor.py`: Predicts if a text message is spam or ham using Linear SVM and TF-IDF
+- `spam.csv`:	Dataset with text messages labeled as 'ham' or 'spam'
+- `svm_eligibility_predictor.py`:	Predicts if a person is eligible based on age, education, and experience
+- `eligibility_data.csv`:	Dataset containing person details and eligibility label
+
 ---
 
-### Sample Output
+## Run the Script 
+```bash
+python3 svm_spam_predictor.py
+```
+```bash
+python3 svm_eligibility_predictor.py
+```
+---
+
+## Sample Output
+
+### svm_spam_predictor.py
 ```
 Model Accuracy: 97.94%
 
@@ -45,30 +55,46 @@ Ham Messages Predicted: 984
 Spam Messages Predicted: 131
 
 --- Sample Predictions ---
-
 | Message                                                         | Actual   | Predicted   |
 |:----------------------------------------------------------------|:---------|:------------|
-| Funny fact Nobody teaches volcanoes 2 erupt, tsunamis 2 aris... | Ham      | Ham         |
-| I sent my scores to sophas and i had to do secondary applica... | Ham      | Ham         |
-| We know someone who you know that fancies you. Call 09058097... | Spam     | Spam        |
-| Only if you promise your getting out as SOON as you can. And... | Ham      | Ham         |
-| Congratulations ur awarded either å£500 of CD gift vouchers ... | Spam     | Spam        |
+| Funny fact Nobody teaches volcanoes to erupt...                 | Ham      | Ham         |
+| We know someone who fancies you...                              | Spam     | Spam        |
+| Congratulations! You’ve won a prize...                          | Spam     | Spam        |
 
 --- Classification Report ---
               precision    recall  f1-score   support
-
          ham       0.98      1.00      0.99       965
         spam       0.98      0.86      0.92       150
-
     accuracy                           0.98      1115
-   macro avg       0.98      0.93      0.95      1115
-weighted avg       0.98      0.98      0.98      1115
+```
+### svm_eligibility_predictor.py
+```
+Model Accuracy: 90.0 %
+
+Classification Report:
+              precision    recall  f1-score   support
+    Eligible       1.00      0.75      0.86         8
+Not Eligible       0.86      1.00      0.92        12
+    accuracy                           0.90        20
+
+Sample 1 Prediction: Not Eligible
+Sample 2 Prediction: Eligible
+Sample 3 Prediction: Not Eligible
 ```
 ---
 
 ## What I Learned
 
-* I learned what SVM is and how it is used in text classification.
-* I understood how to convert messages into numbers using TF-IDF.
-* I trained an SVM model to predict spam messages.
-* At first, the output was messy. Then I worked on improving the output and made it cleaner and easier to understand.
+* I learned what SVM (Support Vector Machine) is and how to use it for classification problems.
+* I practiced Linear SVM using real datasets for:
+  * Spam detection from text messages.
+  * Eligibility prediction based on personal details.
+* I learned to:
+  * Clean and prepare data using pandas.
+  * Convert text to numbers using TF-IDF.
+  * Scale numerical features.
+  * Train and evaluate a model using SVM from scikit-learn.
+* At first, the outputs were hard to read. I fixed and improved the formatting for better understanding.
+* I also added user input support to test predictions for new data easily.
+  
+---
