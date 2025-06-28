@@ -22,7 +22,15 @@
 - It uses Linear SVM to build the model.
 - The program also shows why someone is likely or unlikely to purchase (age, salary, ad viewed).
 - You can also give new input to check the prediction for a new person.
-  
+
+### 4. `svm_credictcard_fraud_detection.py`
+
+- This program predicts whether a credit card transaction is **fraud** or **legit**.
+- It uses a cleaned CSV file (`credictcard.csv`) with features like `V1`, `V2`, ..., `V28`, and `Amount`.
+- The target column is `Class`, where 0 = legit and 1 = fraud.
+- The model uses **SVM with RBF (Gaussian) kernel** to handle non-linear data.
+- It also shows a confusion matrix and classification report to check how well the model works.
+
 ---
 
 ## Requirements
@@ -30,7 +38,7 @@
 Install the required Python libraries using:
 
 ```bash
-pip install pandas numpy scikit-learn tabulate
+pip install pandas numpy scikit-learn tabulate matplotlib
 ```
 ---
 
@@ -42,6 +50,8 @@ pip install pandas numpy scikit-learn tabulate
 - `eligibility_data.csv`:	Dataset containing person details and eligibility label
 - `svm_purchase_predictor.py`: Predicts if a person will purchase a product based on age, salary, and ad viewed
 - `purchase_data.csv`: Dataset with personal details and purchase label
+- `svm_credictcard_fraud_detection.py`: Predicts if a credit card transaction is fraud or legit using SVM (Gaussian kernel)
+- `credictcard.csv`: Dataset with credit card transaction features and fraud labels
 
 ---
 
@@ -54,6 +64,9 @@ python3 svm_eligibility_predictor.py
 ```
 ```bash
 python3 svm_purchase_predictor.py
+```
+```bash
+python3 svm_credictcard_fraud_detection.py
 ```
 ---
 
@@ -116,17 +129,27 @@ Person 1: Won't Purchase
 Person 2: Will Purchase
 Person 3: Won't Purchase
 ```
+### svm_credictcard_fraud_detection.py
+```
+Model Accuracy: 99.85%
+
+Classification Report:
+
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00      9970
+           1       0.73      0.80      0.76        30
+
+    accuracy                           1.00     10000
+   macro avg       0.86      0.90      0.88     10000
+weighted avg       1.00      1.00      1.00     10000
+```
 ---
 
 ## What I Learned
 
-* I understood how Linear SVM works for different types of data like text, eligibility, and product purchase.
-* I learned to:
-  * Handle both categorical and numerical data.
-  * Use label encoding to convert Yes/No values into numbers.
-  * Apply StandardScaler to normalize the input features.
-* I practiced giving reasons for prediction, making the output more meaningful.
-* I also learned how to avoid common warnings in pandas and improve my code structure.
-* Overall, this task helped me understand how to apply SVM in real-world decision-making problems.
-
----
+* I understood how SVM works for different types of problems like spam detection, eligibility check, product purchase prediction, and fraud detection.
+* I learned how to handle both text and numeric data, and how to use TF-IDF or scaling when needed.
+* I used label encoding, train-test splitting, and confusion matrix to understand model performance.
+* I also learned how to improve output and make the code easier to understand.
+* This project helped me apply SVM to real-world tasks in a clear and simple way.
