@@ -146,7 +146,8 @@ weighted avg       1.00      1.00      1.00     10000
 ```
 ### Confusion Matrix (Visual)
 
-![Confusion Matrix](fraud_confusion_matrix.png)
+<h3>Confusion Matrix (Visual)</h3>
+<img src="fraud_confusion_matrix.png" alt="Confusion Matrix" width="500"/>
 
 ---
 
