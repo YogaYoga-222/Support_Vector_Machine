@@ -144,6 +144,10 @@ Classification Report:
    macro avg       0.86      0.90      0.88     10000
 weighted avg       1.00      1.00      1.00     10000
 ```
+### Confusion Matrix (Visual)
+
+![Confusion Matrix for Fraud Detection](./Documents/GitHub/Support_Vector_Machine/fraud_confusion_matrix.png)
+
 ---
 
 ## What I Learned
