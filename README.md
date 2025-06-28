@@ -146,7 +146,7 @@ weighted avg       1.00      1.00      1.00     10000
 ```
 ### Confusion Matrix (Visual)
 
-![Confusion Matrix for Fraud Detection](./Documents/GitHub/Support_Vector_Machine/fraud_confusion_matrix.png)
+![Confusion Matrix](fraud_confusion_matrix.png)
 
 ---
 
